@@ -1,0 +1,5 @@
+127.0.0.1 - - [27/Nov/2016:00:30:37 +0530] "GET / HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [27/Nov/2016:00:30:38 +0530] "GET /AttendanceAdminInterface/WEB-INF/views/student/create.html HTTP/1.1" 404 990
+0:0:0:0:0:0:0:1 - - [27/Nov/2016:00:30:39 +0530] "GET /AttendanceAdminInterface/WEB-INF/views/student/create.html HTTP/1.1" 404 990
+127.0.0.1 - - [27/Nov/2016:00:36:43 +0530] "GET / HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [27/Nov/2016:00:36:46 +0530] "GET /AttendanceAdminInterface/ HTTP/1.1" 200 160

@@ -1,0 +1,202 @@
+<div th:fragment="view">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>
+						Student View <small>please carefully fill up the form </small>
+					</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+
+						<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content" th:if="${data.studentModel != null}">
+					<br />
+					<div class="form-horizontal form-label-left" >
+						
+						<div class="container">
+							<div class="row">
+						<!-- LEFT SIDE Content -->	
+								<div class="col-sm-6">
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="first-name">First Name <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" th:text="${data.studentModel.studentFirstName}"></span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="last-name">Last Name <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" th:text="${data.studentModel.studentLastName}"></span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="enrolnment-no"
+											class="control-label col-md-3 col-sm-3 col-xs-12">EnrolnmentNo
+											</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" th:text="${data.studentModel.enrolnmentNo}"></span>
+											
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="roll-no" 
+											class="control-label col-md-3 col-sm-3 col-xs-12">RollNo
+											</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" th:text="${data.studentModel.rollNo}"></span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="gender"
+											class="control-label col-md-3 col-sm-3 col-xs-12">
+											isMale..?
+											</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											
+											<div class="checkbox">
+									            <label style="font-size: 1.2em">
+									            	<input type="checkbox" th:checked="${data.studentModel.isMale} == true" name="isMale"></input>
+									                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+									            </label>
+									        </div>
+											
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="course-code">Course Code <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" th:text="${data.studentModel.courseCode}"></span>
+											
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="course-name"
+											class="control-label col-md-3 col-sm-3 col-xs-12">Course Name
+											</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" th:text="${data.studentModel.courseName}"></span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="email-id">Email ID <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12"
+											 	  th:text="${data.studentModel.contactInfo !=null ? 'data.studentModel.contactInfo.emailId' : ''}">
+											</span>
+											
+										</div>
+									</div>
+									
+								</div>
+								
+						<!-- RIGHT SIDE Content -->
+								<div class="col-sm-6">
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="contact-no">Contact No <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12"
+												 th:text="${data.studentModel.contactInfo != null ? 'data.studentModel.contactInfo.contactNo' : ''}">
+											</span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="country-name">Country <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12"
+													th:text="${data.studentModel.addressInfo != null ? 'data.studentModel.addressInfo.country' : ''}">
+											</span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="state-name">State <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" 
+												 th:text="${data.studentModel.addressInfo != null ? 'data.studentModel.addressInfo.state' : ''}">
+											</span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="city-name">City <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12"
+												 th:text="${data.studentModel.addressInfo != null ? 'data.studentModel.addressInfo.city' : ''}">
+											</span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="pin-code">PIN Code <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12"
+												 th:text="${data.studentModel.addressInfo != null ? 'data.studentModel.addressInfo.pincode' : ''}">
+											</span>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="address">Address 
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<span class="form-control col-md-7 col-xs-12" style="height:120px;" 
+												th:text="${data.studentModel.addressInfo != null ? 'data.studentModel.addressInfo.address' : ''}"></span>
+										</div>
+									</div>
+									
+								</div>	
+							</div>
+						</div>
+						
+						
+						<div class="ln_solid"></div>
+						<div class="form-group">
+							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+								<button type="reset" class="btn btn-primary">Cancel</button>
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div th:if="${data.studentModel == null}">
+					<h1 style="color:red;">404</h1><h3 style="color:red;">Student Not Found..!</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>

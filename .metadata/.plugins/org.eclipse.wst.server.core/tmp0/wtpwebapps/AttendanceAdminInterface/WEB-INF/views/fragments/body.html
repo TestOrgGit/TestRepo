@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="head :: head">
+</head>
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+
+			<!-- left navigation -->
+			<div class="col-md-3 left_col">
+				<div lang="en" th:replace="leftscrollview :: leftscrollview">
+				</div>
+			</div>
+
+			<!-- top navigation -->
+			<div class="top_nav">
+				<div lang="en" th:replace="header :: header"></div>
+			</div>
+
+			<!-- page content -->
+			<div th:each="content : ${data['content']}" class="right_col"
+				role="main">
+				<div
+					th:replace="@{'../' +${content.section}+'/' + ${content.page}} :: ${content.fragmentTag}"></div>
+			</div>
+			<!-- page content -->
+
+			<!-- footer content -->
+			<footer>
+				<div lang="en" th:replace="footer :: footer"></div>
+			</footer>
+
+		</div>
+	</div>
+	<!-- /footer content -->
+	<div lang="en" th:replace="fhead :: fhead"></div>
+</body>
+</html>
